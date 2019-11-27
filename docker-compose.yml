@@ -1,0 +1,8 @@
+version: '3'
+services:
+  flyway:
+    image: flyway/flyway
+    command: -url=jdbc:postgresql://127.0.0.1:5432/dbTest -schemas=public -user=postgres -password=postgres migrate
+    volumes:
+      - ./sql:/flyway/sql
+    network_mode: host
